@@ -1,0 +1,19 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+  tasks:
+  - name: Test that VSFTPD got installed
+    package:
+      name: vsftpd
+      state: present
+    check_mode: yes
+    register: pkg
+
+  - name: Fail if package was not installed
+    assert:
+      that:
+        - pkg.changed is false
+      fail_msg: "Failed to install the vsftpd package"
+      success_msg: "Successfully installed the vsftpd package"

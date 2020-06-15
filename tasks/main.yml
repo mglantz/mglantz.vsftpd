@@ -1,0 +1,6 @@
+---
+# tasks file for mglantz.vsftpd
+- name:
+  package:
+    name: vsftpd
+    state: present
