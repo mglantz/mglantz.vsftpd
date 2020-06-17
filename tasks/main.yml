@@ -1,6 +1,6 @@
 ---
 # tasks file for mglantz.vsftpd
-- name:
+- name: Install vsftpd package
   package:
     name: vsftpd
     state: present
